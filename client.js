@@ -26,7 +26,6 @@ joinButton.addEventListener('click',()=>{
     }
 
 
-
     tile.forEach((el,id) => {
         el.addEventListener('click',() =>{
             socket.send(id)
@@ -91,8 +90,12 @@ exeEvent = (data) =>{
     opponentMark = mark === 'X' ? 'O' : 'X';
     }
 
-    if(data.startsWith("Winner"||"Defeat"||"Tie")){
+    if(data.startsWith("Winner")||data.startsWith("Defeat") || data.startsWith("Tie") ){
 
+        tile.forEach((el,id) =>{
+            tile[id].firstChild.innerText = "";
+        })
+            
     }
 
     console.log(data)
