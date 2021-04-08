@@ -53,6 +53,7 @@ joinButton.addEventListener('click',()=>{
             socket.send(chat_msg)
             chat_in.value = "Me : "+ chat_in.value;
             chat_box.innerHTML = chat_box.innerHTML + `<p>${chat_in.value}</p>`;
+            chat_box.lastChild.scrollIntoView({ behavior: 'smooth', block: 'end' ,inline: "nearest"})
             chat_in.value = ""
     
         }
@@ -70,6 +71,7 @@ exeEvent = (data) =>{
         oppMsg = "Opponent : "+ oppMsg;
 
         chat_box.innerHTML = chat_box.innerHTML + `<p>${oppMsg}</p>`;
+        chat_box.lastChild.scrollIntoView({ behavior: 'smooth', block: 'end' })
     }
 
     if(data.startsWith("VALID")){

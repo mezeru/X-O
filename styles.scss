@@ -63,7 +63,7 @@ $bg-around: 56609e;
     .chat {
       border-radius: 15px 15px 0 0;
       background-color: rgb(144, 148, 149);
-      width: auto;
+      max-width: 22.5rem;
       font-family: -webkit-pictograph;
       padding: 5% 5%;
       height: 30rem;
@@ -118,10 +118,6 @@ body {
     display: inline;
     height: 50%;
   }
-}
-
-#chat {
-  display: grid;
 }
 
 #container {

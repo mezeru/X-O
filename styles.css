@@ -73,7 +73,7 @@
 .flex-container .chat-box .chat {
   border-radius: 15px 15px 0 0;
   background-color: #909495;
-  width: auto;
+  max-width: 22.5rem;
   font-family: -webkit-pictograph;
   padding: 5% 5%;
   height: 30rem;
@@ -129,11 +129,6 @@ body .sidenav {
   float: left;
   display: inline;
   height: 50%;
-}
-
-#chat {
-  display: -ms-grid;
-  display: grid;
 }
 
 #container {
