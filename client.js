@@ -4,6 +4,8 @@ const joinButton = document.querySelector('#join');
 const tile = document.querySelectorAll(".board-item");
 let chat_in = document.querySelector('.chat-input');
 const chat_box = document.querySelector('.chat')
+const failure = document.querySelector(".failure")
+const warning = document.querySelector(".warning")
 let mark = null;
 let opponentMark = null;
 
@@ -11,11 +13,19 @@ let opponentMark = null;
 
 joinButton.addEventListener('click',()=>{
     
-    const socket = new WebSocket(`ws://localhost:3001`)
+    const socket = new WebSocket(`ws://${server.value}:3001`)
     joinButton.style.display = "none";
     server.style.display = "none";;
 
-    gameOver = false;
+    socket.onerror = () => {
+        const event = new Event("click")
+        leave.dispatchEvent(event);
+        failure.innerHTML = "Server must Be Down , Please Try Again Later"
+        $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+
+    }
+
+
 
     tile.forEach((el,id) => {
         el.addEventListener('click',() =>{
@@ -66,8 +76,9 @@ exeEvent = (data) =>{
         tile[posMe].firstChild.innerText = mark
     }
 
-    if(data.startsWith("INVALID")){
-        $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+    if(data.startsWith("Invalid")){
+        warning.innerHTML = data
+        $( "div.warning" ).fadeIn( 300 ).delay( 200 ).fadeOut( 400 );
     }
 
     if(data.startsWith("Opponent")){
@@ -80,7 +91,9 @@ exeEvent = (data) =>{
     opponentMark = mark === 'X' ? 'O' : 'X';
     }
 
+    if(data.startsWith("Winner"||"Defeat"||"Tie")){
 
+    }
 
     console.log(data)
 

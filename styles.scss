@@ -9,6 +9,28 @@ $bg-around: rgb(86, 96, 158);
   border-radius: 4px;
 }
 
+.warning {
+  text-align: center;
+  font-family: "Google Sans", "Helvetica Neue", sans-serif;
+  width: 80%;
+  color: #a96842;
+  background-color: #f3ecd3c9;
+  border-color: #ebdacc;
+  display: none;
+  position: absolute;
+}
+
+.failure {
+  text-align: center;
+  font-family: "Google Sans", "Helvetica Neue", sans-serif;
+  width: 80%;
+  color: #a94242;
+  background-color: #f3d3d3c9;
+  border-color: #ebccd1;
+  display: none;
+  position: absolute;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -148,7 +170,7 @@ footer {
     border: none;
     font-family: "Courier New", Courier, monospace;
     font-weight: bolder;
-    padding: 2.5%;
+    padding: 2.5% 5%;
     margin: 5px;
     background-color: rgba(255, 255, 255, 0.527);
     color: rgb(0, 0, 0);

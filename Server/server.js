@@ -110,7 +110,7 @@ class Player{
                 }
                 catch(e){                           // Give Error if any
                     console.trace(e);
-                    socket.send(`INVALID ${e.message}`);
+                    socket.send(`Invalid Move : ${e.message}`);
                 }
             }
        
