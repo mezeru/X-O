@@ -113,13 +113,16 @@ class Player{
                     socket.send(`Invalid Move : ${e.message}`);
                 }
             }
-       
+            
+            socket.on('close', () => {               // Send PLayer left Message
+                try { this.opponent.send('OTHER_PLAYER_LEFT');
+                      console.log("Player Left")
+             } catch (e) {}
+              });
 
 
         });
-        socket.on('close', () => {               // Send PLayer left Message
-            try { this.opponent.send('OTHER_PLAYER_LEFT'); } catch (e) {}
-          });
+        
         
     }
        

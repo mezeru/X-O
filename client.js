@@ -6,8 +6,10 @@ let chat_in = document.querySelector('.chat-input');
 const chat_box = document.querySelector('.chat')
 const failure = document.querySelector(".failure")
 const warning = document.querySelector(".warning")
+const alert = document.querySelector(".alert")
 let mark = null;
 let opponentMark = null;
+let gameOver = false;
 
 
 
@@ -28,7 +30,7 @@ joinButton.addEventListener('click',()=>{
 
     tile.forEach((el,id) => {
         el.addEventListener('click',() =>{
-            socket.send(id)
+            !gameOver && socket.send(id)
         });
        });
     
@@ -88,20 +90,35 @@ exeEvent = (data) =>{
     if(data.startsWith("Welcome")){
     mark = data[8];
     opponentMark = mark === 'X' ? 'O' : 'X';
+    
+    sendAlert(data);
+
     }
 
     if(data.startsWith("Winner")||data.startsWith("Defeat") || data.startsWith("Tie") ){
 
-        tile.forEach((el,id) =>{
-            tile[id].firstChild.innerText = "";
-        })
+        gameOver = true;
             
+    }
+
+    if(data.startsWith("OTHER_PLAYER_LEFT")){
+
+        const msg = "Your Opponent Bailed , So I Guess You Are the Winner";
+        sendAlert(data);
+
     }
 
     console.log(data)
 
-
 }
+
+const sendAlert = data =>{
+
+    alert.innerHTML = data;
+    $( "div.alert" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+
+};
+
 
 
 
