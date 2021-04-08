@@ -1,3 +1,10 @@
+.alert-box {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,6 +47,11 @@
   margin-bottom: 10px;
 }
 
+.flex-container .chat-box .chat p {
+  max-width: 10px;
+  word-break: all;
+}
+
 .flex-container .chat-box .chat-input {
   width: 25rem;
   font-size: 20px;
@@ -55,7 +67,7 @@
 
 body {
   background-color: #56609e;
-  padding: 0 3%;
+  padding: 0 10%;
 }
 
 body .main {

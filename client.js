@@ -8,6 +8,7 @@ let mark = null;
 let opponentMark = null;
 
 
+
 joinButton.addEventListener('click',()=>{
     
     const socket = new WebSocket(`ws://localhost:3001`)
@@ -32,6 +33,7 @@ joinButton.addEventListener('click',()=>{
         socket.send("Q");
         joinButton.style.display = "block";
         server.style.display = "block";;
+        chat_box.innerHTML = null;
     });
 
     chat_in.addEventListener('keypress', function (e) {
@@ -65,7 +67,7 @@ exeEvent = (data) =>{
     }
 
     if(data.startsWith("INVALID")){
-        alert(data)
+        $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
     }
 
     if(data.startsWith("Opponent")){
@@ -77,6 +79,7 @@ exeEvent = (data) =>{
     mark = data[8];
     opponentMark = mark === 'X' ? 'O' : 'X';
     }
+
 
 
     console.log(data)

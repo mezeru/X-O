@@ -2,6 +2,13 @@ $fr: 1fr 1fr 1fr;
 
 $bg-around: rgb(86, 96, 158);
 
+.alert-box {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -25,6 +32,11 @@ $bg-around: rgb(86, 96, 158);
       height: 30rem;
       overflow: auto;
       margin-bottom: 10px;
+
+      p {
+        max-width: 10px;
+        word-break: all;
+      }
     }
 
     .chat-input {
@@ -44,7 +56,7 @@ $bg-around: rgb(86, 96, 158);
 
 body {
   background-color: $bg-around;
-  padding: 0 3%;
+  padding: 0 10%;
 
   .main {
     display: grid;
