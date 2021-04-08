@@ -1,0 +1,101 @@
+$fr: 1fr 1fr 1fr;
+
+$bg-around: rgb(86, 96, 158);
+
+body {
+  background-color: $bg-around;
+  display: grid;
+  place-items: center;
+
+  .main {
+    display: grid;
+    place-items: center;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 700%;
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+  }
+
+  .sidenav {
+    float: left;
+    display: inline;
+    height: 50%;
+  }
+}
+
+#container {
+  margin: 7% 0;
+  height: 55vh;
+  width: 55vh;
+  #board {
+    height: 100%;
+    width: auto;
+    display: grid;
+    grid-template-columns: $fr;
+    grid-template-rows: $fr;
+    background-color: $bg-around;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    .board-item {
+      display: grid;
+      background-color: rgb(91, 16, 141);
+      place-items: center;
+      color: greenyellow;
+      border-radius: 35%;
+
+      p {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-size: 8rem;
+      }
+    }
+  }
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  p {
+    margin: 0;
+    display: inline;
+    width: 200%;
+  }
+
+  button {
+    padding: 10px;
+    font-size: larger;
+    margin: 5px 0;
+    font-family: "Montserrat", sans-serif;
+    outline: none;
+  }
+
+  #join {
+    background-color: rgb(24, 221, 24);
+    color: rgb(255, 255, 255);
+    border-radius: 15px 5px 15px 5px;
+  }
+
+  #leave {
+    background-color: rgb(218, 31, 31);
+    color: white;
+    border-radius: 15px 5px 15px 5px;
+  }
+
+  input {
+    border-radius: 15px;
+    font-size: larger;
+    display: inline;
+    outline: none;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bolder;
+    padding: 2.5%;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.527);
+    color: rgb(0, 0, 0);
+  }
+}
