@@ -2,10 +2,49 @@ $fr: 1fr 1fr 1fr;
 
 $bg-around: rgb(86, 96, 158);
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2%;
+
+  .chat-box {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    align-items: center;
+
+    .chat {
+      border-radius: 15px 15px 0 0;
+      background-color: rgb(144, 148, 149);
+      width: auto;
+      font-family: -webkit-pictograph;
+      padding: 5% 5%;
+      height: 30rem;
+      overflow: auto;
+      margin-bottom: 10px;
+    }
+
+    .chat-input {
+      width: 25rem;
+      font-size: 20px;
+      border-radius: 0 0 8px 8px;
+      background-color: rgba(255, 255, 255, 0.527);
+      color: rgb(0, 0, 0);
+      outline: none;
+      border: none;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bolder;
+      padding: 0% 5%;
+    }
+  }
+}
+
 body {
   background-color: $bg-around;
-  display: grid;
-  place-items: center;
+  padding: 0 3%;
 
   .main {
     display: grid;
@@ -24,6 +63,10 @@ body {
     display: inline;
     height: 50%;
   }
+}
+
+#chat {
+  display: grid;
 }
 
 #container {

@@ -1,7 +1,9 @@
-const server = document.querySelector("input");
+const server = document.querySelector("#serverIp");
 const leave = document.querySelector("#leave");
 const joinButton = document.querySelector('#join');
 const tile = document.querySelectorAll(".board-item");
+let chat_in = document.querySelector('.chat-input');
+const chat_box = document.querySelector('.chat')
 let mark = null;
 let opponentMark = null;
 
@@ -32,10 +34,30 @@ joinButton.addEventListener('click',()=>{
         server.style.display = "block";;
     });
 
+    chat_in.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const chat_msg = "M"+chat_in.value 
+            socket.send(chat_msg)
+            chat_in.value = "Me : "+ chat_in.value;
+            chat_box.innerHTML = chat_box.innerHTML + `<p>${chat_in.value}</p>`;
+            chat_in.value = ""
+    
+        }
+    });
+
 });
 
 
+
+
 exeEvent = (data) =>{
+
+    if(data.startsWith("M")){
+        let oppMsg = data.substring(1);
+        oppMsg = "Opponent : "+ oppMsg;
+
+        chat_box.innerHTML = chat_box.innerHTML + `<p>${oppMsg}</p>`;
+    }
 
     if(data.startsWith("VALID")){
         let posMe = data[5]

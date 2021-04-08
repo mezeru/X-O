@@ -80,9 +80,15 @@ class Player{
         }
 
         socket.on("message",(msg) =>{
+            
             if(msg === "Q"){            // Make button (id Quit)
                 socket.close()
             }
+
+           if(String(msg).startsWith("M")){
+                this.opponent.socket.send(msg);
+            }
+
             else {
                 const pos = Number(msg);    // Pos is the position which the player has selected
 

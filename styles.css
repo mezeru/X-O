@@ -1,8 +1,61 @@
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 2%;
+}
+
+.flex-container .chat-box {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 25rem;
+  align-items: center;
+}
+
+.flex-container .chat-box .chat {
+  border-radius: 15px 15px 0 0;
+  background-color: #909495;
+  width: auto;
+  font-family: -webkit-pictograph;
+  padding: 5% 5%;
+  height: 30rem;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.flex-container .chat-box .chat-input {
+  width: 25rem;
+  font-size: 20px;
+  border-radius: 0 0 8px 8px;
+  background-color: rgba(255, 255, 255, 0.527);
+  color: black;
+  outline: none;
+  border: none;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  padding: 0% 5%;
+}
+
 body {
   background-color: #56609e;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  padding: 0 3%;
 }
 
 body .main {
@@ -22,6 +75,11 @@ body .sidenav {
   float: left;
   display: inline;
   height: 50%;
+}
+
+#chat {
+  display: -ms-grid;
+  display: grid;
 }
 
 #container {
