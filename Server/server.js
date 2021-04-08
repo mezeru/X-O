@@ -82,7 +82,11 @@ class Player{
         socket.on("message",(msg) =>{
             
             if(msg === "Q"){            // Make button (id Quit)
+            
+             this.opponent.socket.send("OTHER_PLAYER_LEFT");
+             console.log("Player Left")
                 socket.close()
+
             }
 
            if(String(msg).startsWith("M")){
@@ -113,12 +117,7 @@ class Player{
                     socket.send(`Invalid Move : ${e.message}`);
                 }
             }
-            
-            socket.on('close', () => {               // Send PLayer left Message
-                try { this.opponent.send('OTHER_PLAYER_LEFT');
-                      console.log("Player Left")
-             } catch (e) {}
-              });
+
 
 
         });

@@ -70,11 +70,6 @@ $bg-around: 56609e;
       overflow: auto;
       margin-bottom: 10px;
       box-shadow: $shadow;
-
-      p {
-        max-width: 10px;
-        word-break: all;
-      }
     }
 
     .chat-input {
@@ -158,6 +153,21 @@ body {
         font-family: "Roboto", sans-serif;
         font-weight: bolder;
         font-size: 8rem;
+        opacity: 1;
+      }
+      .anim {
+        animation: 0.5s ease-in xo-text;
+      }
+
+      @keyframes xo-text {
+        0% {
+          font-size: 0;
+          opacity: 0;
+        }
+        100% {
+          font-size: 8rem;
+          opacity: 1;
+        }
       }
     }
   }

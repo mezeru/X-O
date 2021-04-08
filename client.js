@@ -75,6 +75,7 @@ exeEvent = (data) =>{
     if(data.startsWith("VALID")){
         let posMe = data[5]
         tile[posMe].firstChild.innerText = mark
+        tile[posMe].firstElementChild.classList.add("anim");
     }
 
     if(data.startsWith("Invalid")){
@@ -85,6 +86,7 @@ exeEvent = (data) =>{
     if(data.startsWith("Opponent")){
         let posOpp = data[8];
         tile[posOpp].firstChild.innerText = opponentMark
+        tile[posOpp].firstElementChild.classList.add("anim");
     }
 
     if(data.startsWith("Welcome")){
@@ -104,7 +106,7 @@ exeEvent = (data) =>{
     if(data.startsWith("OTHER_PLAYER_LEFT")){
 
         const msg = "Your Opponent Bailed , So I Guess You Are the Winner";
-        sendAlert(data);
+        sendAlert(msg);
 
     }
 
