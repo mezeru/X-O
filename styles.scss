@@ -50,7 +50,6 @@ $no-move: calc(100vh - 100px);
 .flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   gap: 5%;
 
   .chat-box {
