@@ -102,7 +102,6 @@ exeEvent = (data) =>{
     if(data.startsWith("Winner")||data.startsWith("Defeat") || data.startsWith("Tie") ){
 
         sendAlert(data);
-
         gameOver = true;
             
     }
@@ -125,6 +124,7 @@ const sendAlert = data =>{
 
     alert.innerHTML = data;
     $( "div.alert" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+    setTimeout(function(){ window.location.reload(); }, 1500);
 
 };
 

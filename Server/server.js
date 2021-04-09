@@ -82,10 +82,12 @@ class Player{
         socket.on("message",(msg) =>{
             
             if(msg === "Q"){            // Make button (id Quit)
-            
+            try{
              this.opponent.socket.send("OTHER_PLAYER_LEFT");
              console.log("Player Left")
                 socket.close()
+            }
+            catch{}
 
             }
 
