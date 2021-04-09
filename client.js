@@ -101,6 +101,8 @@ exeEvent = (data) =>{
 
     if(data.startsWith("Winner")||data.startsWith("Defeat") || data.startsWith("Tie") ){
 
+        sendAlert(data);
+
         gameOver = true;
             
     }
@@ -108,6 +110,9 @@ exeEvent = (data) =>{
     if(data.startsWith("OTHER_PLAYER_LEFT")){
 
         const msg = "Your Opponent Bailed , So I Guess You Are the Winner";
+
+        gameOver = true;        
+
         sendAlert(msg);
 
     }

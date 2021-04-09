@@ -48,11 +48,10 @@
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  gap: 2%;
+  gap: 5%;
 }
 
 .flex-container .chat-box {
-  padding-bottom: 2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -68,6 +67,12 @@
           justify-content: center;
   width: 25rem;
   align-items: center;
+  height: calc(100vh - 100px);
+}
+
+.flex-container .chat-box .pad {
+  padding-top: 10rem;
+  padding-right: 6rem;
 }
 
 .flex-container .chat-box .chat {
@@ -135,6 +140,7 @@ body .sidenav {
   margin: 7% 0;
   height: 55vh;
   width: 55vh;
+  height: calc(66vh - 100px);
 }
 
 #container #board {
@@ -245,5 +251,28 @@ footer input {
   background-color: rgba(255, 255, 255, 0.527);
   color: black;
   text-align: center;
+}
+
+.score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25rem;
+  height: calc(100vh - 100px);
+}
+
+.score footer {
+  padding-top: 10rem;
+  font-family: "Noto Sans JP script=latin rev=5";
 }
 /*# sourceMappingURL=styles.css.map */

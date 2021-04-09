@@ -6,6 +6,8 @@ $shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
 
 $bg-around: 56609e;
 
+$no-move: calc(100vh - 100px);
+
 .alert-box {
   padding: 15px;
   margin-bottom: 20px;
@@ -49,16 +51,21 @@ $bg-around: 56609e;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 2%;
+  gap: 5%;
 
   .chat-box {
-    padding-bottom: 2rem;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 25rem;
     align-items: center;
+    height: $no-move;
+
+    .pad {
+      padding-top: 10rem;
+      padding-right: 6rem;
+    }
 
     .chat {
       border-radius: 15px 15px 0 0;
@@ -124,6 +131,9 @@ body {
   margin: 7% 0;
   height: 55vh;
   width: 55vh;
+
+  height: calc(66vh - 100px);
+
   #board {
     height: 100%;
     width: auto;
@@ -212,5 +222,19 @@ footer {
     background-color: rgba(255, 255, 255, 0.527);
     color: rgb(0, 0, 0);
     text-align: center;
+  }
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: $no-move;
+
+  footer {
+    padding-top: 10rem;
+    font-family: "Noto Sans JP script=latin rev=5";
   }
 }
