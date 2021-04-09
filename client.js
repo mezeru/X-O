@@ -129,9 +129,9 @@ exeEvent = (data) =>{
         const msg = "Your Opponent Bailed , So I Guess You Are the Winner";
 
         gameOver = true;        
-        
-        setTimeout(function(){ window.location.reload(); }, 3000);
         sendAlert(msg);
+        setTimeout(function(){ window.location.reload(); }, 3000);
+        
 
     }
 
@@ -139,6 +139,11 @@ exeEvent = (data) =>{
 }
 
 const sendAlert = data =>{
+
+    if(data.startsWith("Your Opponent")){
+        alert.innerHTML = data;
+    $( "div.alert" ).fadeIn( 700 ).delay( 500 ).fadeOut( 400);
+    }
 
     alert.innerHTML = data;
     $( "div.alert" ).fadeIn( 300 ).delay( 500 ).fadeOut( 400 );
