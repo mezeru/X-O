@@ -99,10 +99,28 @@ exeEvent = (data) =>{
 
     }
 
+    if(data.startsWith("Your") || data.startsWith("X will")){
+
+        warning.innerHTML = "Opponent Connected"
+        console.log(data)
+        if (data.startsWith("Your")) { 
+        $( "div.warning" ).fadeIn( 300 ).delay( 500 ).fadeOut( 400 );
+        setTimeout(function(){ sendAlert(data); }, 1300);
+            
+        }
+        else{
+           setTimeout(function(){ sendAlert(data); }, 700);
+        }
+        
+        
+        }
+
     if(data.startsWith("Winner")||data.startsWith("Defeat") || data.startsWith("Tie") ){
 
         sendAlert(data);
         gameOver = true;
+        
+        setTimeout(function(){ window.location.reload(); }, 3000);
             
     }
 
@@ -111,20 +129,19 @@ exeEvent = (data) =>{
         const msg = "Your Opponent Bailed , So I Guess You Are the Winner";
 
         gameOver = true;        
-
+        
+        setTimeout(function(){ window.location.reload(); }, 3000);
         sendAlert(msg);
 
     }
 
-    console.log(data)
 
 }
 
 const sendAlert = data =>{
 
     alert.innerHTML = data;
-    $( "div.alert" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
-    setTimeout(function(){ window.location.reload(); }, 1500);
+    $( "div.alert" ).fadeIn( 300 ).delay( 500 ).fadeOut( 400 );
 
 };
 

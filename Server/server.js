@@ -75,7 +75,7 @@ class Player{
         else{
             this.opponent = room.playerX
             this.opponent.opponent = this      // Sets opponent of the X player 
-            socket.send(" X will move first ")   // Send message to PLayerO
+            socket.send("X will move first")   // Send message to PLayerO
             this.opponent.socket.send("Your Move")    // Send message to PLayerX
         }
 
