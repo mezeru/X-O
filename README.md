@@ -1,7 +1,7 @@
 ## X & O is Multiplayer Tic Tac Toe game
 
 
-This is my project for Network Progamming Course
+#### This is my project for Network Progamming Course
 
 This app was made using :
 - HTML (HyperText Markup Language)
