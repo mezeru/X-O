@@ -2,6 +2,11 @@
 
 This is my project for Netwrok Progamming Course.
 
-X & O is Multiplayer Tic Tac Toe game implemented using Socket Programming
+X & O is Multiplayer Tic Tac Toe game
 
-https://brave-darwin-a83e76.netlify.app/
+
+
+Hosted on : 
+- https://brave-darwin-a83e76.netlify.app/
+- mezeru.github.io/
+
