@@ -6,6 +6,7 @@
 This app was made using :
 - HTML (HyperText Markup Language)
 - SCSS (Syntactically Awesome Style Sheets)
+- CSS (Cascading Style Sheets)
 - NodeJs
 - JavaScript
 
