@@ -6,6 +6,7 @@
 This app was made using :
 - HTML (HyperText Markup Language)
 - SCSS (Syntactically Awesome Style Sheets)
+- NodeJs
 - JavaScript
 
 Node Modules Used for Socket Programming :
