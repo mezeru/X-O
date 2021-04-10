@@ -12,7 +12,7 @@ Node Modules Used for Socket Programming :
 - socket.io (Server.js)
 - Websocket (Client.js)
 
-<br>
+---
 
 Features Implemented :
 - Multiplayer Gameplay with another person
@@ -23,7 +23,7 @@ Features planed to Implemented in future :
 - Adding score cards
 - Dynamic Leaderboard for all players 
 
-<br>
+---
 
 Hosted on : 
 - https://brave-darwin-a83e76.netlify.app/
