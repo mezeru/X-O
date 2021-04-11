@@ -10,7 +10,7 @@ This app was made using :
 - NodeJs
 - JavaScript
 
-Node Modules Used for Socket Programming :
+Node Modules Used in the Project :
 - socket.io (Server.js)
 - Websocket (Client.js)
 - Express.js
