@@ -7,7 +7,7 @@ This app was made using :
 - HTML (HyperText Markup Language)
 - SCSS (Syntactically Awesome Style Sheets)
 - CSS (Cascading Style Sheets)
-- NodeJs
+- NodeJs (JavaScript runtime environment (V8))
 - JavaScript
 
 Node Modules Used in the Project :
