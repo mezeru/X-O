@@ -14,6 +14,7 @@ Node Modules Used for Socket Programming :
 - socket.io (Server.js)
 - Websocket (Client.js)
 - Express.js
+- Mongoose
 
 ---
 
