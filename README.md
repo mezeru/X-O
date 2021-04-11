@@ -22,7 +22,8 @@ Features Implemented :
 - Chatting functionality
 
 Features planed to Implemented in future :
-- Accounts & Authendication
+- Accounts (MongoDB)
+- Authendication 
 - Adding score cards
 - Dynamic Leaderboard for all players 
 
