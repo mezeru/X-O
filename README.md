@@ -9,6 +9,7 @@ This app was made using :
 - CSS (Cascading Style Sheets)
 - NodeJs (JavaScript runtime environment (V8))
 - JavaScript
+- MongoDB (NoSQL Database)
 
 Node Modules Used in the Project :
 - socket.io (Server.js)
