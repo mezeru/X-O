@@ -208,6 +208,16 @@ footer {
   place-items: center;
 }
 
+footer #username:disabled {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  background-color: 56609e;
+  font-family: "Rajdhani", sans-serif;
+  color: white;
+  font-size: xx-large;
+}
+
 footer p {
   margin: 0;
   display: inline;

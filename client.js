@@ -7,6 +7,9 @@ const chat_box = document.querySelector('.chat')
 const failure = document.querySelector(".failure")
 const warning = document.querySelector(".warning")
 const alert = document.querySelector(".alert")
+const usernameBox = document.querySelector("#username")
+let username = null
+let oppUsername = null;
 let mark = null;
 let opponentMark = null;
 let gameOver = false;
@@ -17,7 +20,8 @@ joinButton.addEventListener('click',()=>{
     
     const socket = new WebSocket(`ws://${server.value}:3001`)
     joinButton.style.display = "none";
-    server.style.display = "none";;
+    server.style.display = "none";
+    usernameBox.setAttribute("disabled","true")
 
     socket.onerror = () => {
         const event = new Event("click")
@@ -27,6 +31,7 @@ joinButton.addEventListener('click',()=>{
 
     }
 
+    
 
     tile.forEach((el,id) => {
         el.addEventListener('click',() =>{
@@ -37,13 +42,14 @@ joinButton.addEventListener('click',()=>{
  
 
     socket.addEventListener("message",({data}) => {
-        exeEvent(data);
+        exeEvent(data,socket);
     });
 
     leave.addEventListener('click',() => {
         socket.send("Q");
         joinButton.style.display = "block";
-        server.style.display = "block";;
+        server.style.display = "block";
+        usernameBox.removeAttribute("disabled")
         chat_box.innerHTML = null;
     });
 
@@ -64,11 +70,16 @@ joinButton.addEventListener('click',()=>{
 
 
 
-exeEvent = (data) =>{
+exeEvent = (data,socket) =>{
+
+    if(data.startsWith("Oppuser")){
+        oppUsername = data.substring(7)
+        console.log(oppUsername)
+    }
 
     if(data.startsWith("M")){
         let oppMsg = data.substring(1);
-        oppMsg = "Opponent : "+ oppMsg;
+        oppMsg = oppUsername +" : "+ oppMsg;
 
         chat_box.innerHTML = chat_box.innerHTML + `<p>${oppMsg}</p>`;
         chat_box.lastChild.scrollIntoView({ behavior: 'smooth', block: 'end' })
@@ -94,7 +105,11 @@ exeEvent = (data) =>{
     if(data.startsWith("Welcome")){
     mark = data[8];
     opponentMark = mark === 'X' ? 'O' : 'X';
+
     
+    username = "User"+usernameBox.value
+    socket.send(username)
+    console.log(username)
     sendAlert(data);
 
     }

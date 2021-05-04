@@ -179,6 +179,14 @@ body {
 }
 
 footer {
+  #username:disabled {
+    width: min-content;
+    background-color: $bg-around;
+    font-family: "Rajdhani", sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+  }
+
   display: grid;
   place-items: center;
   p {

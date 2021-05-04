@@ -5,11 +5,16 @@ const errorSend = (msg) =>{
     socket.send(msg);
 }
 
+var username = "";
+
 (() => {
     let roomNo = 1;
     let room = null;
     server.on("connection",(socket,req) => {
+        
         console.log("PLayer has Connected")
+        
+
         if (room === null){
             room = new Room(roomNo);
             room.playerX = new Player(room,socket,"X")
@@ -56,8 +61,7 @@ class Room {
         
         this.board[pos] = this.currPlayer.mark
         this.currPlayer = this.currPlayer.opponent
-              
-
+            
 
     }
 
@@ -67,19 +71,31 @@ class Player{
 
     constructor(room,socket,mark){
         Object.assign(this,{room,socket,mark});  // Combining all methods and values of room, socket and mark in "this"
-        socket.send(`Welcome ${mark}`)           // Socket.send
+
         if(mark === "X"){
-            room.currPlayer = this;           
+            room.currPlayer = this;   
             socket.send("Waiting for Your Oppenent ")
         }
         else{
+            
             this.opponent = room.playerX
             this.opponent.opponent = this      // Sets opponent of the X player 
             socket.send("X will move first")   // Send message to PLayerO
             this.opponent.socket.send("Your Move")    // Send message to PLayerX
+          
         }
-
+        
         socket.on("message",(msg) =>{
+
+            if(msg.startsWith("User")){
+                this.username = msg.substring(4);
+                if(this.opponent){
+                    
+                    this.opponent.socket.send("Oppuser"+this.username)
+                    this.socket.send("Oppuser"+this.opponent.username)
+                    console.log(this.username)
+                }
+            }
             
             if(msg === "Q"){            // Make button (id Quit)
             try{
@@ -95,7 +111,9 @@ class Player{
                 this.opponent.socket.send(msg);
             }
 
-            else {
+            
+
+            if(!isNaN(msg)){
                 const pos = Number(msg);    // Pos is the position which the player has selected
 
                 try{
@@ -115,15 +133,15 @@ class Player{
                     }
                 }
                 catch(e){                           // Give Error if any
-                    console.trace(e);
                     socket.send(`Invalid Move : ${e.message}`);
                 }
             }
 
-
+            
 
         });
         
+        socket.send(`Welcome ${mark}`)           // Socket.send
         
     }
        
