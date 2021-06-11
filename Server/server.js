@@ -1,5 +1,6 @@
 const WebSocket = require("ws")
-const server = new WebSocket.Server({port:3001})
+const Port = process.env.PORT || 3001
+const server = new WebSocket.Server({port:Port})
 
 const errorSend = (msg) =>{
     socket.send(msg);
