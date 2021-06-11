@@ -1,7 +1,7 @@
 const WebSocket = require("ws")
 const Port = process.env.PORT || 3001
 const server = new WebSocket.Server({port:Port})
-
+console.log("Listening @ ",Port)
 const errorSend = (msg) =>{
     socket.send(msg);
 }
