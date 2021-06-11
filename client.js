@@ -18,7 +18,7 @@ let gameOver = false;
 
 joinButton.addEventListener('click',()=>{
     
-    const socket = new WebSocket(`ws://${server.value}:3001`)
+    const socket = new WebSocket(`ws://${server.value}`)
     joinButton.style.display = "none";
     server.style.display = "none";
     usernameBox.setAttribute("disabled","true")
