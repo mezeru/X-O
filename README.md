@@ -53,4 +53,6 @@ Start the server by running node server.js or using a tool like nodemon for auto
 
 Access the application in a web browser by visiting the specified URL or port where the server is running.
 
-### The X & O project is a multiplayer Tic Tac Toe game developed for the Network Programming Course. It utilizes various web technologies, including HTML, SCSS, CSS, Node.js, and MongoDB, to create an interactive gaming experience. With implemented features such as multiplayer gameplay and chat functionality, and planned features like accounts, authentication, score cards, and a dynamic leaderboard, the project aims to provide an engaging gaming environment for users.
+The X & O project is a multiplayer Tic Tac Toe game developed for the Network Programming Course. It utilizes various web technologies, including HTML, SCSS, CSS, Node.js, and MongoDB, to create an interactive gaming experience. With implemented features such as multiplayer gameplay and chat functionality, and planned features like accounts, authentication, score cards, and a dynamic leaderboard, the project aims to provide an engaging gaming environment for users.
+
+The Application is deployed at [x-n-o.netlify.app](https://x-n-o.netlify.app/)https://x-n-o.netlify.app/
